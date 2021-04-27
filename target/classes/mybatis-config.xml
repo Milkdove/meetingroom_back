@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+    <!--扫描javabean-->
+    <typeAliases>
+        <package name="com.milkdove.meetingroom.meetingroomback.entites"/>
+    </typeAliases>
+    <plugins>
+        <!-- com.github.pagehelper为PageHelper类所在包名 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!-- 使用下面的方式配置参数，后面会有所有的参数介绍 -->
+            <property name="helperDialect" value="mysql"/>
+            <property name="offsetAsPageNum" value="true"/>
+            <property name="rowBoundsWithCount" value="false"/>
+            <!-- 设置为true时，会将RowBounds第一个参数offset当成pageNum页码使用 -->
+            <property name="pageSizeZero" value="false"/>
+            <!-- 设置为true时，如果pageSize=0或者RowBounds.limit = 0就会查询出全部的结果 -->
+            <property name="supportMethodsArguments" value="false"/>
+            <property name="returnPageInfo" value="none"/>
+        </plugin>
+    </plugins>
+
+
+
+
+
+</configuration>
